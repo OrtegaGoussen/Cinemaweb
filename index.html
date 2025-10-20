@@ -43,15 +43,15 @@
       }
 
       .carousel-caption h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       .carousel-caption p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
     }
 
-    /* 🔹 CARTELERA TARJETAS UNIFORMES */
+    /* 🔹 CARTELERA TARJETAS UNIFORMES Y RESPONSIVAS */
     .movie-card {
       background-color: #1a1a1a;
       border: none;
@@ -64,8 +64,30 @@
     }
 
     .movie-card img {
+      width: 100%;
       height: 350px;
       object-fit: cover;
+    }
+
+    /* Ajustes para tablets */
+    @media (max-width: 992px) {
+      .movie-card img {
+        height: 280px;
+      }
+    }
+
+    /* Ajustes para teléfonos */
+    @media (max-width: 576px) {
+      .movie-card img {
+        height: auto;
+        max-height: 230px;
+        object-fit: contain;
+        background-color: black;
+      }
+
+      .movie-card .card-body {
+        text-align: center;
+      }
     }
 
     .movie-card .card-body {
