@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Cinema The MasterS</title>
 
   <!-- Bootstrap CSS -->
   <link
@@ -21,21 +21,62 @@
       background-color: #141414;
     }
 
+    /* 🔹 CARRUSEL RESPONSIVO */
     .carousel-item img {
+      width: 100%;
       height: 550px;
       object-fit: cover;
       filter: brightness(70%);
     }
 
+    @media (max-width: 992px) {
+      .carousel-item img {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .carousel-item img {
+        height: 250px;
+        object-fit: contain;
+        background-color: black;
+      }
+
+      .carousel-caption h2 {
+        font-size: 1.2rem;
+      }
+
+      .carousel-caption p {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* 🔹 CARTELERA TARJETAS UNIFORMES */
+    .movie-card {
+      background-color: #1a1a1a;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
     .movie-card img {
       height: 350px;
       object-fit: cover;
-      border-radius: 10px;
+    }
+
+    .movie-card .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .movie-card:hover {
       transform: scale(1.03);
-      transition: 0.3s ease;
     }
 
     footer {
@@ -115,8 +156,8 @@
   <section id="cartelera" class="container mt-5">
     <h2 class="text-center mb-4 text-danger fw-bold">🎥 Cartelera</h2>
     <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card bg-dark text-light movie-card">
+      <div class="col-md-4 d-flex">
+        <div class="card text-light movie-card w-100">
           <img src="GuardianesdelaGalaxia.jpg" class="card-img-top" alt="Pelicula 1">
           <div class="card-body">
             <h5 class="card-title">GUARDIANES DE LA GALAXIA</h5>
@@ -125,8 +166,9 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card bg-dark text-light movie-card">
+
+      <div class="col-md-4 d-flex">
+        <div class="card text-light movie-card w-100">
           <img src="HastaElUltimoHombre.jpg" class="card-img-top" alt="Pelicula 2">
           <div class="card-body">
             <h5 class="card-title">HASTA EL ULTIMO HOMBRE</h5>
@@ -135,11 +177,12 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card bg-dark text-light movie-card">
+
+      <div class="col-md-4 d-flex">
+        <div class="card text-light movie-card w-100">
           <img src="Gladiador.webp" class="card-img-top" alt="Pelicula 3">
           <div class="card-body">
-            <h5 class="card-title">El Gladiador</h5>
+            <h5 class="card-title">EL GLADIADOR</h5>
             <p class="card-text">Un general romano traicionado por el emperador que servía.</p>
             <a href="compra.html" class="btn btn-ticket text-white w-100">Comprar Entrada</a>
           </div>
@@ -171,7 +214,7 @@
           <td>2:30 PM | 5:30 PM | 8:30 PM</td>
         </tr>
         <tr>
-          <td>El Gladiador</td>
+          <td>EL GLADIADOR</td>
           <td>3</td>
           <td>4:00 PM | 7:00 PM | 10:00 PM</td>
         </tr>
@@ -214,4 +257,3 @@
 
 </body>
 </html>
-
